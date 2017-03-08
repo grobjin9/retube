@@ -1,0 +1,27 @@
+.first-comment {
+  @include center;
+
+  @at-root #{&}__content {
+    text-align: center;
+  }
+
+  @at-root #{&}__icon {
+    font-size: 50px !important;
+  }
+
+  @at-root #{&}__text {
+    margin-top: 10px;
+  }
+
+  @at-root #{&}__link {
+    margin-left: 2px;
+    padding: 3px 3px;
+
+    border-bottom: 1px solid;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

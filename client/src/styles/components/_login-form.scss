@@ -1,0 +1,230 @@
+.login-form {
+
+  @at-root #{&}__container {
+    position: relative;
+
+    margin-top: 100px;
+    padding: 20px;
+
+    background-color: $white-color;
+
+    @include rounded(5px);
+  }
+
+  @at-root #{&}__title {
+    position: relative;
+
+    font-size: 24px;
+    color: $emperor-color;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @include bold;
+
+    &::after {
+      content: "";
+
+      display: block;
+
+      position: absolute;
+      left: 0;
+      top: 100%;
+
+      height: 2px;
+      width: 100%;
+
+      visibility: visible;
+
+      background-color: #19c8fa;
+
+      @include transform(scale(0));
+      @include transition(all 0.3s);
+    }
+
+    &:hover {
+      &::after {
+        visibility: visible !important;
+
+        @include transform(scale(1));
+      }
+    }
+
+    @at-root #{&}--active {
+      &::after {
+        visibility: visible !important;
+
+        @include transform(scale(1));
+      }
+    }
+  }
+
+  @at-root #{&}__control-label {
+    color: $emperor-color;
+  }
+
+  @at-root #{&}__tabs {
+    margin-bottom: 20px;
+  }
+
+  @at-root #{&}__slash {
+    margin: 0 10px;
+  }
+
+  @at-root #{&}__radio {
+    display: none;
+  }
+
+  @at-root #{&}__body {
+    position: relative;
+  }
+
+  @at-root #{&}__separator {
+    position: relative;
+
+    margin: 20px 0;
+
+    text-align: center;
+
+    &::after {
+      content: '';
+
+      display: block;
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $loblolly-color;
+
+      z-index: 1;
+    }
+  }
+
+  @at-root #{&}__separator-content {
+    position: relative;
+
+    padding: 0 5px;
+
+    color: $loblolly-color;
+    background-color: white;
+    text-transform: uppercase;
+
+    z-index: 3;
+  }
+
+  @at-root #{&}__submit-btn {
+    width: 100%;
+
+    padding: 10px;
+
+    font-size: 22px;
+    color: $white-color;
+    background-color: $java-color;
+    text-transform: uppercase;
+    border: 1px solid $java-color;
+
+    @include transition(all .5s);
+    @include rounded(3px);
+
+    &:hover {
+      background-color: $white-color;
+      color: $java-color;
+    }
+  }
+
+  @at-root #{&}__soc-auth {
+    display: block;
+
+    width: 100%;
+
+    padding: 5px 0;
+
+    color: $white-color;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include rounded(3px);
+    @include transition(all .5s);
+    @include bold;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    @at-root #{&}--facebook {
+      background-color: $azure-color;
+      border: 1px solid $azure-color;
+
+      &:hover {
+        color: $azure-color;
+        background-color: $white-color;
+      }
+    }
+
+    @at-root #{&}--twitter {
+      background-color: $cerulean-color;
+      border: 1px solid $cerulean-color;
+
+      &:hover {
+        color: $cerulean-color;
+        background-color: $white-color;
+      }
+    }
+  }
+
+  @at-root #{&}__soc-icon {
+    font-size: 1.7rem !important;
+    margin-right: 15px;
+  }
+
+  @at-root #{&}__error-notifier {
+    margin-top: 5px;
+
+    font-size: .9rem;
+    color: darkred;
+    @include bold;
+  }
+
+  @at-root #{&}__password-container {
+    position: relative;
+  }
+
+  @at-root #{&}__password {
+    padding-right: 60px;
+  }
+
+  @at-root #{&}__password-show-btn {
+    position: absolute;
+    right: 7px;
+    top: 50%;
+
+    min-width: 48px;
+
+    padding: 3px 7px;
+
+    font-size: 11px;
+    font-weight: bold;
+    background-color: $sidecar-color;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @include transform(translate(0, -50%));
+    @include rounded(5px);
+  }
+
+  @at-root #{&}__cover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background-color: transparentize($emperor-color, .8);
+
+    z-index: 5;
+  }
+}

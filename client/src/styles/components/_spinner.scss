@@ -1,0 +1,10 @@
+.spinner {
+  position: absolute !important;
+  left: calc(50% - #{$spinner-width} / 2) !important;
+  top: calc(50% - #{$spinner-height} / 2) !important;
+
+  width: $spinner-width !important;
+  height: $spinner-height !important;
+
+  z-index: 5;
+}

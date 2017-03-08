@@ -1,0 +1,199 @@
+.rooms {
+  height: 100%;
+
+  margin-right: 2px;
+
+  overflow: hidden;
+
+  z-index: 100;
+
+  @include rounded(3px);
+
+  @at-root #{&}__cover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, .4);
+
+    z-index: 5;
+  }
+
+  @at-root #{&}__list {
+    height: 600px - 45px;
+
+    background-color: $mysticLighter-color;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  @at-root #{&}__header {
+    position: relative;
+
+    height: 45px;
+    width: 100%;
+
+    padding: 8px 20px;
+
+    background-color: $athensGray-color;
+
+    z-index: 10;
+  }
+
+  @at-root #{&}__load-indicator {
+    position: relative;
+
+    height: 50px;
+    width: 100%;
+  }
+
+  @at-root #{&}__control-box {
+    position: absolute;
+    top: 50%;
+
+    width: 17px;
+    height: 17px;
+
+    @include transform(translate(0, -50%));
+    @include transition(transform .3s);
+
+    @at-root #{&}--plain {
+      width: auto;
+      height: auto;
+    }
+
+    @at-root #{&}--left {
+      left: 10px;
+    }
+
+    @at-root #{&}--right {
+      right: 10px;
+    }
+
+    @at-root #{&}--active45 {
+      @include transform(translate(0, -50%) rotate(45deg));
+      @include transition(transform .3s);
+    }
+  }
+
+  @at-root #{&}__control-box-btn {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    @at-root #{&}--cross {
+      background: url("/images/icons/cross.png") no-repeat center;
+    }
+
+    @at-root #{&}--coq {
+      font-size: 18px !important;
+      color: $nepal-color;
+      vertical-align: bottom;
+    }
+
+    @at-root #{&}--arrow-down {
+      font-size: 20px;
+      color: $nepal-color;
+    }
+  }
+
+  @at-root #{&}__filter-list {
+    position: absolute;
+    top: 130%;
+    left: 5px;
+
+    min-width: 245px;
+
+    padding-top: 5px;
+
+    background-color: $white-color;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    z-index: 5;
+
+    @include box-shadow(0 1px 3px transparentize($black-color, .9));
+    @include rounded(3px);
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      bottom: 100%;
+      left: 5px;
+
+      height: 0;
+      width: 0;
+
+      pointer-events: none;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid $white-color;
+    }
+  }
+
+  @at-root #{&}__filter-link {
+    display: block;
+
+    position: relative;
+
+    padding: 5px 10px;
+
+    color: $shark-color;
+    text-align: center;
+    border-bottom: 1px solid $nepal-color;
+
+    z-index: 10;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover {
+      background-color: $mystic-color;
+      text-decoration: none;
+    }
+
+    @at-root #{&}--active {
+      background-color: $mystic-color;
+    }
+  }
+
+  @at-root #{&}__filter-title {
+    float: left;
+  }
+
+  @at-root #{&}__filter-icon {
+    float: right;
+  }
+
+  @at-root #{&}__filter-info {
+    margin-left: 10px;
+  }
+
+  @at-root #{&}__filter-sep {
+    margin: 0;
+    padding: 2px 0;
+
+    font-size: 11px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.super {
+  padding: 10px 25px;
+}

@@ -1,0 +1,112 @@
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+
+  @include transition(opacity .5s);
+}
+
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear-active {
+  opacity: 1;
+
+  @include transition(opacity .5s);
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  opacity: 0;
+
+  @include transition( .5s);
+}
+
+.slideDown-enter {
+  height: 0px;
+  overflow: hidden;
+  //opacity: 0;
+}
+
+.slideDown-enter.slideDown-enter-active {
+  height: 191px;
+  //opacity: 1;
+  @include transition(all 1s);
+}
+
+.slideDown-appear {
+  height: 0px;
+  oveflow: hidden;
+  //opacity: 0;
+
+}
+
+.slideDown-appear-active {
+  height: 191px;
+  //opacity: 1;
+
+  @include transition(all 1s);
+}
+
+.slideDown-leave {
+  height: 191px;
+  overflow: hidden;
+  //opacity: 1;
+}
+
+.slideDown-leave.slideDown-leave-active {
+  height: 0px;
+  //opacity: 0;
+
+  @include transition(all 1s);
+}
+
+.roomShowUp-enter,
+.roomShowUp-appear {
+  background-color: #ADD8E6;
+
+  @include transition(all 1s);
+}
+
+.roomShowUp-enter.roomShowUp-enter-active,
+.roomShowUp-appear.roomShowUp-appear-active {
+  background-color: $mysticLighter-color;
+
+  @include transition(all 1s);
+}
+
+.roomShowUpActive-enter,
+.roomShowUpActive-appear {
+  background-color: #ADD8E6;
+
+  @include transition(all 1s);
+}
+
+.roomShowUpActive-enter.roomShowUpActive-enter-active,
+.roomShowUpActive-appear.roomShowUpActive-appear-active {
+  background-color: $white-color;
+
+  @include transition(all 1s);
+}
+
+.fadeInHighlighted-enter,
+.fadeInHighlighted-appear {
+  background-color: red;
+  opacity: 0;
+
+  @include transition(all 4s);
+}
+
+.fadeInHighlighted-enter.fadeInHighlighted-enter-active,
+.fadeInHighlighted-appear.fadeInHighlighted-appear-active {
+  background-color: blue;
+  opacity: 1;
+
+  @include transition(all 4s);
+}

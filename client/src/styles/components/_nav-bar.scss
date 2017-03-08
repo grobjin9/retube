@@ -1,0 +1,43 @@
+.nav-bar {
+
+  @at-root #{&}__link {
+    display: table;
+
+    position: relative;
+
+    width: $nav-bar-link-width;
+    height: $nav-bar-link-height;
+
+    font-size: $nav-bar-link-size;
+    overflow: hidden;
+
+    &:hover {
+      text-decoration: none;
+
+      .nav-bar__icon {
+        color: transparentize($white-color, 0);
+      }
+    }
+
+    &:focus {
+      outline: none;
+      text-decoration: none;
+    }
+
+    @at-root #{&}--active {
+      .nav-bar__icon {
+        color: transparentize($white-color, 0);
+      }
+    }
+  }
+
+  @at-root #{&}__icon {
+    display: table-cell !important;
+
+    color: transparentize($white-color, .5);
+    text-align: center;
+    vertical-align: middle;
+
+    @include transition(color .5s);
+  }
+}

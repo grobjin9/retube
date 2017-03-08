@@ -1,0 +1,53 @@
+.user-frame {
+  display: flex;
+  align-items: center;
+
+  float: right;
+
+  position: relative;
+
+  height: 100%;
+
+  padding: 0 5px;
+
+  cursor: pointer;
+
+  @include transition(all .5s);
+
+  &:hover {
+    background-color: $denim-color;
+  }
+
+  @at-root #{&}--active {
+    background-color: $denim-color;
+  }
+
+  @at-root #{&}__username {
+    float: left;
+
+    color: $white-color;
+
+    @include bold;
+  }
+
+  @at-root #{&}__avatar {
+    float: right;
+
+    margin: 0 10px;
+  }
+
+  @at-root #{&}__arrow {
+    float: right;
+
+    width: 8px;
+    height: 4px;
+
+    opacity: 0.45;
+    background: url("/images/icons/arrow_down.png") no-repeat;
+    background-position: right 0;
+
+    @at-root #{&}--active {
+      opacity: 1;
+    }
+  }
+}

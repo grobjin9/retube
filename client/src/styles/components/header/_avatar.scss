@@ -1,0 +1,32 @@
+.avatar {
+  position: relative;
+
+  width: $avatar-width;
+  height: $avatar-height;
+
+  @include rounded(50%);
+
+  @at-root #{&}__state {
+    position: absolute;
+
+    width: $avatar-state-width;
+    height: $avatar-state-height;
+
+    right: 4px;
+    bottom: 4px;
+
+    @include box-shadow(0 0 0 3px $shark-color);
+    @include rounded(50%);
+
+    @at-root #{&}--online {
+      background-color: $screamingGreen-color;
+    }
+  }
+
+  @at-root #{&}__image-container {
+    width: 100%;
+    height: 100%;
+
+    @include rounded(50%);
+  }
+}

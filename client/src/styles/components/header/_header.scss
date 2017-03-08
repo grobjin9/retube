@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  height: $header-height;
+
+  background-color: $shark-color;
+
+  @at-root #{&}__container {
+    height: 100%;
+  }
+
+  @at-root #{&}__logotype {
+    display: flex;
+    align-items: center;
+
+    float: left;
+
+    height: 100%;
+
+    font-family: 'VT323', monospace;
+    font-size: 45px;
+    color: $white-color;
+  }
+}

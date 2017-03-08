@@ -1,0 +1,174 @@
+.emoji-bar {
+  display: none;
+
+  position: absolute;
+  bottom: 125%;
+  right: 50%;
+
+  width: 287px;
+  height: 150px;
+
+  padding: 5px;
+
+  font-size: 15px;
+  border: 1px solid $lightDark-custom-color;
+  background-color: white;
+  cursor: default;
+
+  overflow: hidden;
+
+  z-index: 10;
+
+  @include box-shadow(0 3px 12px $lightDark-custom-color);
+  @include rounded(4px);
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    height: 0;
+    width: 0;
+
+    pointer-events: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid $lightDark-custom-color;
+
+    @include transform(translateX(-50%));
+  }
+
+  @at-root #{&}__body {
+    position: relative;
+
+    height: 170px;
+    width: 100%;
+
+    padding-top: 6px;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+
+      height: 1px;
+      width: 100%;
+
+      box-shadow: 0 0 10px 8px white;
+      z-index: 5;
+    }
+  }
+
+  @at-root #{&}__header {
+    position: relative;
+
+    height: 20px;
+
+    padding: 2px 5px;
+
+    font-size: 12px;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      background-color: white;
+
+      height: 1px;
+      width: 100%;
+
+      box-shadow: 0 0 10px 8px white;
+      z-index: 5;
+    }
+  }
+
+  @at-root #{&}__header-content {
+    position: relative;
+
+    z-index: 10;
+  }
+
+  @at-root #{&}__list {
+    position:absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding: 5px;
+
+    overflow-y:scroll;
+    overflow-x: hidden;
+  }
+
+  @at-root #{&}__emoji {
+    display: inline-block;
+    float: left;
+
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @at-root #{&}__tabs {
+    position: relative;
+
+    width: 100%;
+    height: 35px;
+
+    background-color: #ebeef2;
+
+    z-index: 10;
+  }
+
+  @at-root #{&}__tab {
+    display: block;
+
+    position: relative;
+
+    float: left;
+
+    width: calc(100% / 8);
+    height: 100%;
+
+    opacity: .3;
+    font-size: 20px;
+    cursor: pointer;
+
+    @include transition(background-color .5s);
+
+    &:hover {
+      background-color: #e2e6eb;
+      text-decoration: none;
+    }
+
+    @at-root #{&}--active {
+      opacity: 1;
+      background-color: $white-color;
+
+      &:hover {
+        background-color: $white-color;
+      }
+    }
+  }
+
+  @at-root #{&}__tab-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @include transform(translate(-50%, -50%));
+  }
+}

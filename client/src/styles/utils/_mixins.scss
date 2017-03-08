@@ -1,0 +1,70 @@
+@mixin transform($rule) {
+  -webkit-transform: $rule;
+  -moz-transform: $rule;
+  -ms-transform: $rule;
+  -o-transform: $rule;
+  transform: $rule;
+}
+
+@mixin transition($rule...) {
+  -webkit-transition: $rule;
+  -moz-transition: $rule;
+  -ms-transition: $rule;
+  -o-transition: $rule;
+  transition: $rule;
+}
+
+@mixin rounded($rule) {
+  -webkit-border-radius: $rule;
+  -moz-border-radius: $rule;
+  border-radius: $rule;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+@mixin box-shadow($rule) {
+  -moz-box-shadow: $rule;
+  -webkit-box-shadow: $rule;
+  box-shadow: $rule;
+}
+
+@mixin bold {
+  font-weight: bold;
+}
+
+$breakpoints: (
+        "phone":        320px,
+        "phone-wide":   480px,
+        "phablet":      560px,
+        "tablet-small": 640px,
+        "tablet":       768px,
+        "laptop":       992px,
+        "tablet-wide":  1024px,
+        "desktop":      1200px,
+        "desktop-wide": 1440px
+);
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}

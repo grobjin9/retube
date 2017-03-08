@@ -1,0 +1,36 @@
+.search-field {
+  width: 75%;
+
+  margin: 0 auto;
+
+  @at-root #{&}__content {
+    border: 1px solid transparentize($black-color, .7);
+
+    @include rounded(15px);
+  }
+
+  @at-root #{&}__icon {
+    width: 10%;
+
+    font-size: 0.9rem;
+    text-align: right;
+
+    @at-root #{&}.fa-times {
+      text-align: left;
+    }
+  }
+
+  @at-root #{&}__input {
+    width: 80%;
+
+    padding: 3px 5px;
+
+    font-size: 13px;
+    background-color: $athensGray-color;
+    border: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

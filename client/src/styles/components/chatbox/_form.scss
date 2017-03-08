@@ -1,0 +1,202 @@
+.cb-form {
+  position: relative;
+
+  margin: 0;
+  padding: 10px;
+
+  box-sizing: border-box;
+  border-top: solid 1px #e4e6e9;
+  background: #fafbfc;
+
+  @at-root #{&}__row {
+    position: relative;
+  }
+
+  @at-root #{&}__input-container {
+    background: #fff;
+    border: 1px solid #d3d9de;
+
+    @include rounded(3px);
+  }
+
+  @at-root #{&}__input {
+    display: block;
+
+    width: 100%;
+    padding: 10px 70px 10px 10px;
+
+    word-wrap: break-word;
+    resize: none;
+    overflow: auto;
+    border: 0;
+  }
+
+  @at-root #{&}__emojiBar {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    width: 35px;
+    height: 30px;
+
+    color: transparentize($nepal-color, .5);
+    font-size: 20px;
+    cursor: pointer;
+
+    @include transform(translate(0, -50%));
+    @include transition(color .5s);
+
+    &:hover {
+      color: transparentize($nepal-color, 0);
+    }
+
+    @at-root #{&}--active {
+      color: transparentize($nepal-color, 0);
+    }
+  }
+
+  @at-root #{&}__emojiBar-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    font-size: 20px !important;
+    color: inherit;
+
+    @include transform(translate(-50%, -50%));
+  }
+
+  @at-root #{&}__emojiBar-list {
+    position:absolute;
+    top: 30px;
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding: 5px;
+
+    overflow-y:scroll;
+  }
+
+  @at-root #{&}__emojiBar-list-wrapper {
+    display: none;
+
+    position: absolute;
+    bottom: 118%;
+    right: 0;
+
+    width: 287px;
+    height: 227px;
+
+    overflow: hidden;
+
+    font-size: 15px;
+    border: 1px solid $lightDark-custom-color;
+    background-color: white;
+    cursor: default;
+
+    z-index: 10;
+
+    @include box-shadow(0 3px 12px $lightDark-custom-color);
+    @include rounded(4px);
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 100%;
+      right: 8px;
+
+      height: 0;
+      width: 0;
+
+      pointer-events: none;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $lightDark-custom-color;
+
+      @include transform(translateX(-50%));
+    }
+  }
+
+  @at-root #{&}__emojiBar-shortCode {
+    display: inline-block;
+
+    width: 25px;
+    height: 25px;
+
+    float: left;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @at-root #{&}__emojiBar-header {
+    height: 30px;
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //
+    //width: 100%;
+    //box-sizing: border-box;
+    //height: 30px;
+    //z-index: 20;
+    //padding: 0 4px;
+    //border-radius: 4px 4px 0 0;
+    //pointer-events: none;
+  }
+
+  @at-root #{&}__emojiBar-header-text {
+    //transform: translateY(0px);
+    //color: #939393;
+    //letter-spacing: 0.2px;
+    //line-height: 14px;
+    //padding: 10px 5px 6px;
+    //background: #fff;
+    //width: 100%;
+    //box-sizing: border-box;
+
+    &::after {
+      content: '';
+      height: 10px;
+      width: 100%;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      background: white;
+    }
+  }
+
+  @at-root #{&}__submit-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: $white-color;
+    border: 1px solid #d3d9de;
+
+    @include transform(translate(-50%, 25%));
+    @include rounded(50%);
+
+    &:focus {
+      outline: 0;
+    }
+
+    & > .fa.fa-paper-plane {
+      position: relative;
+      left: -2px;
+    }
+  }
+
+  @at-root #{&}__textarea-block {
+    padding-right: 0;
+  }
+
+  @at-root #{&}__submit-block {
+    padding-left: 0;
+  }
+}

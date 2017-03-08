@@ -1,0 +1,85 @@
+.new-cr-form {
+  width: 100%;
+  height: auto;
+
+  padding: 10px 10px 1px;
+
+  background-color: $white-color;
+  border-bottom: 2px solid $mystic-color;
+
+  @at-root #{&}__header {
+
+  }
+
+  @at-root #{&}__body {
+    padding: 5px 25px;
+  }
+
+  @at-root #{&}__form-group {
+    margin-bottom: 10px;
+  }
+
+  @at-root #{&}__tags-block {
+    height: auto;
+  }
+
+  @at-root #{&}__tag-container {
+    display: block;
+
+    float: left;
+
+    position: relative;
+
+    height: auto;
+    max-height: 22px;
+
+    margin: 1px 0 1px 2px;
+    padding: 0 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid $azureRadiance-color;
+    color: #333;
+    text-transform: uppercase;
+    overflow: hidden;
+
+    @include transition(color .5s);
+
+    &:hover {
+      color: $azure-color;
+    }
+
+    @at-root #{&}--highlighted {
+      color: $geraldine-color;
+      border-color: $geraldine-color;
+    }
+
+    @at-root #{&}--new {
+      border: 0;
+    }
+  }
+
+  @at-root #{&}__tag-ready {
+    margin-right: 0;
+    text-decoration: none;
+    cursor: pointer;
+    padding-right: 5px;
+  }
+
+  @at-root #{&}__tag-new {
+    max-width: 55px;
+
+    border: 0;
+    border-radius: 0;
+  }
+
+  @at-root #{&}__tag-close {
+    cursor: pointer;
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

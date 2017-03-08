@@ -1,0 +1,53 @@
+@import "utils/_all";
+@import "components/_all";
+
+html, body {
+  width: 100%;
+  height: 100%;
+
+  font-family: 'Open Sans', sans-serif;
+  background-color: $shark-color;
+}
+
+.container {
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  height: 100%;
+
+  background-color: $shark-color;
+
+  overflow: hidden;
+}
+
+.nopad {
+  padding: 0;
+}
+
+.wrap-1 {
+  height: 600px;
+
+  margin-top: 3px;
+}
+
+.expand-height {
+  height: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+input:focus, textarea:focus, link:focus {
+  outline: none;
+}

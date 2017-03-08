@@ -1,0 +1,130 @@
+.room {
+  display: block;
+
+  width: 100%;
+
+  background-color: $mysticLighter-color;
+  border-bottom: 2px solid $mystic-color;
+
+  @at-root #{&}--active {
+    background-color: $white-color;
+  }
+
+  @at-root #{&}__link {
+    display: block;
+
+    padding: 10px;
+
+    color: $shark-color;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      //outline: none;
+    }
+  }
+
+  @at-root #{&}__data-block {
+    position: relative;
+
+    margin-bottom: 5px;
+    padding-right: 65px;
+
+    text-align: left;
+  }
+
+  @at-root #{&}__sep {
+    margin: 6px 13px;
+
+    clear: both;
+    border-top: 1px solid $mystic-color;
+  }
+
+  @at-root #{&}__name {
+    font-size: 16px;
+  }
+
+  @at-root #{&}__description {
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  @at-root #{&}__tags-block {
+    text-align: center;
+  }
+
+  @at-root #{&}__tags {
+    clear: both;
+
+    font-size: 12px;
+    list-style-type: none;
+  }
+
+  @at-root #{&}__tag {
+    float: left;
+
+    margin: 3px;
+    padding: 3px;
+
+    border: 1px solid $azureRadiance-color;
+
+    @include rounded(5px);
+    @include transition(all .5s);
+
+    &:hover {
+      color: $mystic-color;
+      background-color: $azureRadiance-color;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @at-root #{&}__favorite {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    @include transform(translate(-50%, - 50%));
+
+    &:hover {
+      .room__favorite-icon {
+        color: $goldColor;
+      }
+    }
+
+    @at-root #{&}--active {
+      color: $goldColor;
+
+      @include transition(color .5s);
+    }
+  }
+
+  @at-root #{&}__favorite-icon {
+    font-size: 20px !important;
+
+    @include transition(all .5s);
+  }
+
+  @at-root #{&}__delete {
+    position: absolute;
+    top: 50%;
+    right: 35px;
+
+    @include transform(translate(-50%, - 50%));
+
+    &:hover {
+      .room__delete-icon {
+        color: darkred;
+      }
+    }
+  }
+
+  @at-root #{&}__delete-icon {
+    font-size: 18px !important;
+
+    @include transition(all .5s);
+  }
+}

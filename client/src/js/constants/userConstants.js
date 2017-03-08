@@ -1,0 +1,5 @@
+export const UPDATE_USER = 'UPDATE_USER';
+
+export const KILL_USER = 'KILL_USER';
+
+export const UPDATE_FAVORITE_ROOMS_COUNT = 'CHANGE_FAVORITE_ROOMS_COUNT';

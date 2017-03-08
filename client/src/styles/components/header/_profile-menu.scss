@@ -1,0 +1,53 @@
+.profile-menu {
+  position: absolute;
+  top: 59px;
+  right: 0;
+
+  width: $profile-menu-width;
+
+  padding: 4px 0;
+
+  background-color: $white-color;
+  background-clip: padding-box;
+  text-align: center;
+  border: 1px solid $lightDark-custom-color;
+
+  z-index: 10;
+
+  @include box-shadow(0 3px 12px $lightDark-custom-color);
+  @include rounded(4px);
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    bottom: 100%;
+    right: 2px;
+
+    height: 0;
+    width: 0;
+
+    pointer-events: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid $lightDark-custom-color;
+  }
+
+  @at-root #{&}__link {
+    display: block;
+
+    padding: 5px 0;
+
+    @include transition(all .5s);
+
+    &:hover {
+      background-color: $mystic-color;
+      text-decoration: none;
+    }
+  }
+
+  @at-root #{&}__sep {
+    margin: 4px 13px;
+    border-top: 1px solid $mystic-color;
+  }
+}
