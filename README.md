@@ -3,10 +3,10 @@
 ![alt tag](demo.gif)
 
 Retube is a full stack ( react, redux, socket.io, node, mongo ) real time chat application.
-The demo version is available: https://chatretube.herokuapp.com .
+The demo version is available: https://retubeapp.herokuapp.com .
 
 ## Features:
-- React, redux, react-router, mongo, node, socket.io
+- React, redux, react-router, mongo, node, socket.io, pm2
 - Authentication using passport.js
 - Emoji support
 - Group chats
