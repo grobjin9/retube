@@ -72,6 +72,7 @@ class Rooms extends React.Component {
       query: ''
     };
 
+    this._active = false;
     this.timer = null;
     this.lastTimeValue = null;
 
@@ -86,6 +87,10 @@ class Rooms extends React.Component {
 
   componentDidMount() {
     this.props.fetchRoomsRequest();
+  }
+
+  componentDidUpdate() {
+    if (!this._active) this._active = true;
   }
 
   onQueryChange(text) {
@@ -212,7 +217,7 @@ class Rooms extends React.Component {
           </section>
         </div>
         <div className="col-md-8 nopad expand-height">
-          { list.length  && this.props.children }
+          { ( list.length || this._active ) ? this.props.children : "" }
         </div>
       </div>
     );
