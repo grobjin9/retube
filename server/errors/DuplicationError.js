@@ -5,7 +5,7 @@ class DuplicationError extends Error {
     this.name = "DuplicationError";
 
     if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, AuthError);
+      Error.captureStackTrace(this, DuplicationError);
     } else {
       this.stack = (new Error()).stack;
     }

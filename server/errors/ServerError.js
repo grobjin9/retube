@@ -5,7 +5,7 @@ class ServerError extends Error {
     this.name = "ServerError";
 
     if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, AuthError);
+      Error.captureStackTrace(this, ServerError);
     } else {
       this.stack = (new Error()).stack;
     }

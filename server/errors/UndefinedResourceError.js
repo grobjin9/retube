@@ -5,7 +5,7 @@ class UndefinedResourceError extends Error {
     this.name = "UndefinedResourceError";
 
     if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, AuthError);
+      Error.captureStackTrace(this, UndefinedResourceError);
     } else {
       this.stack = (new Error()).stack;
     }
